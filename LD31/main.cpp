@@ -7,10 +7,20 @@
 //
 
 #include <iostream>
+#include "GameManager.h"
 
 int main(int argc, char** argv)
 {
+    GameManager::Instance()->Init("LD31", 640, 480, "Level1.json");
     
+    TextureManager::Instance()->LoadTexture("PlayerSheetThin.png", "playerTex");
+    
+    GameObject* go = new GameObject("playerTex", 14, 58);
+    
+    GameManager::Instance()->gScene->Add(go);
+    
+    GameManager::Instance()->Tick();
+    GameManager::Instance()->Clean();
     
     return 0;
 }

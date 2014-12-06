@@ -12,6 +12,22 @@
 		F55FEB391A32DAC10022467D /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55FEB381A32DAC10022467D /* CoreFoundation.framework */; };
 		F55FEB3C1A32DAD40022467D /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55FEB3A1A32DAD40022467D /* SDL2_image.framework */; };
 		F55FEB3D1A32DAD40022467D /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55FEB3B1A32DAD40022467D /* SDL2.framework */; };
+		F55FEB5B1A32E2BB0022467D /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F55FEB4D1A32E2BB0022467D /* Camera.cpp */; };
+		F55FEB5C1A32E2BB0022467D /* EventHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F55FEB4E1A32E2BB0022467D /* EventHandler.cpp */; };
+		F55FEB5D1A32E2BB0022467D /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F55FEB4F1A32E2BB0022467D /* GameManager.cpp */; };
+		F55FEB5E1A32E2BB0022467D /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F55FEB501A32E2BB0022467D /* GameObject.cpp */; };
+		F55FEB5F1A32E2BB0022467D /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F55FEB511A32E2BB0022467D /* jsoncpp.cpp */; };
+		F55FEB601A32E2BB0022467D /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F55FEB521A32E2BB0022467D /* Particle.cpp */; };
+		F55FEB611A32E2BB0022467D /* ParticleEmitter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F55FEB531A32E2BB0022467D /* ParticleEmitter.cpp */; };
+		F55FEB621A32E2BB0022467D /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F55FEB541A32E2BB0022467D /* Scene.cpp */; };
+		F55FEB631A32E2BB0022467D /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F55FEB551A32E2BB0022467D /* TextureManager.cpp */; };
+		F55FEB641A32E2BB0022467D /* TileMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F55FEB561A32E2BB0022467D /* TileMap.cpp */; };
+		F55FEB651A32E2BB0022467D /* Vector2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F55FEB571A32E2BB0022467D /* Vector2.cpp */; };
+		F55FEB6C1A32F45B0022467D /* PlatformerTiles.png in Resources */ = {isa = PBXBuildFile; fileRef = F55FEB6A1A32F45B0022467D /* PlatformerTiles.png */; };
+		F55FEB6D1A32F45B0022467D /* PlayerSheet.png in Resources */ = {isa = PBXBuildFile; fileRef = F55FEB6B1A32F45B0022467D /* PlayerSheet.png */; };
+		F55FEB6F1A32F47F0022467D /* Level1.json in Resources */ = {isa = PBXBuildFile; fileRef = F55FEB6E1A32F47F0022467D /* Level1.json */; };
+		F55FEB711A3313670022467D /* PlayerSheetThin.png in Resources */ = {isa = PBXBuildFile; fileRef = F55FEB701A3313670022467D /* PlayerSheetThin.png */; };
+		F55FEB741A333E390022467D /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F55FEB721A333E390022467D /* Enemy.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +38,36 @@
 		F55FEB381A32DAC10022467D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		F55FEB3A1A32DAD40022467D /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = /Library/Frameworks/SDL2_image.framework; sourceTree = "<absolute>"; };
 		F55FEB3B1A32DAD40022467D /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = /Library/Frameworks/SDL2.framework; sourceTree = "<absolute>"; };
+		F55FEB421A32E2BB0022467D /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		F55FEB431A32E2BB0022467D /* EventHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventHandler.h; sourceTree = "<group>"; };
+		F55FEB441A32E2BB0022467D /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
+		F55FEB451A32E2BB0022467D /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
+		F55FEB461A32E2BB0022467D /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Particle.h; sourceTree = "<group>"; };
+		F55FEB471A32E2BB0022467D /* ParticleEmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleEmitter.h; sourceTree = "<group>"; };
+		F55FEB481A32E2BB0022467D /* Scene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		F55FEB491A32E2BB0022467D /* TextureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureManager.h; sourceTree = "<group>"; };
+		F55FEB4A1A32E2BB0022467D /* Tile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tile.h; sourceTree = "<group>"; };
+		F55FEB4B1A32E2BB0022467D /* TileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TileMap.h; sourceTree = "<group>"; };
+		F55FEB4C1A32E2BB0022467D /* Vector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector2.h; sourceTree = "<group>"; };
+		F55FEB4D1A32E2BB0022467D /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		F55FEB4E1A32E2BB0022467D /* EventHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EventHandler.cpp; sourceTree = "<group>"; };
+		F55FEB4F1A32E2BB0022467D /* GameManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameManager.cpp; sourceTree = "<group>"; };
+		F55FEB501A32E2BB0022467D /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
+		F55FEB511A32E2BB0022467D /* jsoncpp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = jsoncpp.cpp; path = LD31/jsoncpp.cpp; sourceTree = SOURCE_ROOT; };
+		F55FEB521A32E2BB0022467D /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Particle.cpp; sourceTree = "<group>"; };
+		F55FEB531A32E2BB0022467D /* ParticleEmitter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleEmitter.cpp; sourceTree = "<group>"; };
+		F55FEB541A32E2BB0022467D /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		F55FEB551A32E2BB0022467D /* TextureManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TextureManager.cpp; sourceTree = "<group>"; };
+		F55FEB561A32E2BB0022467D /* TileMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TileMap.cpp; sourceTree = "<group>"; };
+		F55FEB571A32E2BB0022467D /* Vector2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector2.cpp; sourceTree = "<group>"; };
+		F55FEB591A32E2BB0022467D /* json-forwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "json-forwards.h"; sourceTree = "<group>"; };
+		F55FEB5A1A32E2BB0022467D /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
+		F55FEB6A1A32F45B0022467D /* PlatformerTiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlatformerTiles.png; sourceTree = "<group>"; };
+		F55FEB6B1A32F45B0022467D /* PlayerSheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayerSheet.png; sourceTree = "<group>"; };
+		F55FEB6E1A32F47F0022467D /* Level1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level1.json; sourceTree = "<group>"; };
+		F55FEB701A3313670022467D /* PlayerSheetThin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayerSheetThin.png; sourceTree = "<group>"; };
+		F55FEB721A333E390022467D /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
+		F55FEB731A333E390022467D /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +105,10 @@
 		F55FEB151A32D9EA0022467D /* LD31 */ = {
 			isa = PBXGroup;
 			children = (
-				F55FEB1B1A32D9EA0022467D /* main.cpp */,
+				F55FEB661A32E2D00022467D /* Engine */,
+				F55FEB411A32DB640022467D /* Assets */,
+				F55FEB401A32DB590022467D /* Headers */,
+				F55FEB3F1A32DB4F0022467D /* Sources */,
 				F55FEB161A32D9EA0022467D /* Supporting Files */,
 			);
 			path = LD31;
@@ -82,6 +131,97 @@
 				F55FEB361A32DAB30022467D /* Cocoa.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F55FEB3F1A32DB4F0022467D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F55FEB1B1A32D9EA0022467D /* main.cpp */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		F55FEB401A32DB590022467D /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		F55FEB411A32DB640022467D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F55FEB6E1A32F47F0022467D /* Level1.json */,
+				F55FEB6A1A32F45B0022467D /* PlatformerTiles.png */,
+				F55FEB6B1A32F45B0022467D /* PlayerSheet.png */,
+				F55FEB701A3313670022467D /* PlayerSheetThin.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		F55FEB581A32E2BB0022467D /* json */ = {
+			isa = PBXGroup;
+			children = (
+				F55FEB591A32E2BB0022467D /* json-forwards.h */,
+				F55FEB5A1A32E2BB0022467D /* json.h */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		F55FEB661A32E2D00022467D /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				F55FEB691A32E2E90022467D /* Libraries */,
+				F55FEB671A32E2D80022467D /* Headers */,
+				F55FEB681A32E2DF0022467D /* Sources */,
+			);
+			name = Engine;
+			sourceTree = "<group>";
+		};
+		F55FEB671A32E2D80022467D /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				F55FEB421A32E2BB0022467D /* Camera.h */,
+				F55FEB431A32E2BB0022467D /* EventHandler.h */,
+				F55FEB441A32E2BB0022467D /* GameManager.h */,
+				F55FEB451A32E2BB0022467D /* GameObject.h */,
+				F55FEB461A32E2BB0022467D /* Particle.h */,
+				F55FEB471A32E2BB0022467D /* ParticleEmitter.h */,
+				F55FEB481A32E2BB0022467D /* Scene.h */,
+				F55FEB491A32E2BB0022467D /* TextureManager.h */,
+				F55FEB4A1A32E2BB0022467D /* Tile.h */,
+				F55FEB4B1A32E2BB0022467D /* TileMap.h */,
+				F55FEB4C1A32E2BB0022467D /* Vector2.h */,
+				F55FEB731A333E390022467D /* Enemy.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		F55FEB681A32E2DF0022467D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F55FEB721A333E390022467D /* Enemy.cpp */,
+				F55FEB4D1A32E2BB0022467D /* Camera.cpp */,
+				F55FEB4E1A32E2BB0022467D /* EventHandler.cpp */,
+				F55FEB4F1A32E2BB0022467D /* GameManager.cpp */,
+				F55FEB521A32E2BB0022467D /* Particle.cpp */,
+				F55FEB531A32E2BB0022467D /* ParticleEmitter.cpp */,
+				F55FEB541A32E2BB0022467D /* Scene.cpp */,
+				F55FEB551A32E2BB0022467D /* TextureManager.cpp */,
+				F55FEB571A32E2BB0022467D /* Vector2.cpp */,
+				F55FEB501A32E2BB0022467D /* GameObject.cpp */,
+				F55FEB561A32E2BB0022467D /* TileMap.cpp */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		F55FEB691A32E2E90022467D /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				F55FEB511A32E2BB0022467D /* jsoncpp.cpp */,
+				F55FEB581A32E2BB0022467D /* json */,
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +281,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F55FEB6F1A32F47F0022467D /* Level1.json in Resources */,
+				F55FEB6D1A32F45B0022467D /* PlayerSheet.png in Resources */,
+				F55FEB6C1A32F45B0022467D /* PlatformerTiles.png in Resources */,
+				F55FEB711A3313670022467D /* PlayerSheetThin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +295,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F55FEB601A32E2BB0022467D /* Particle.cpp in Sources */,
+				F55FEB651A32E2BB0022467D /* Vector2.cpp in Sources */,
+				F55FEB5B1A32E2BB0022467D /* Camera.cpp in Sources */,
+				F55FEB611A32E2BB0022467D /* ParticleEmitter.cpp in Sources */,
+				F55FEB5D1A32E2BB0022467D /* GameManager.cpp in Sources */,
 				F55FEB1C1A32D9EA0022467D /* main.cpp in Sources */,
+				F55FEB5F1A32E2BB0022467D /* jsoncpp.cpp in Sources */,
+				F55FEB741A333E390022467D /* Enemy.cpp in Sources */,
+				F55FEB621A32E2BB0022467D /* Scene.cpp in Sources */,
+				F55FEB641A32E2BB0022467D /* TileMap.cpp in Sources */,
+				F55FEB5C1A32E2BB0022467D /* EventHandler.cpp in Sources */,
+				F55FEB5E1A32E2BB0022467D /* GameObject.cpp in Sources */,
+				F55FEB631A32E2BB0022467D /* TextureManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
