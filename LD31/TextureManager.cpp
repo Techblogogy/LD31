@@ -68,7 +68,7 @@ void TextureManager::Render(std::string name, Vector2 position)
     bounds.y = 0;
     
     destR.x = (int)position.x - Camera::Instance()->GetX();
-    destR.y = (int)position.x - Camera::Instance()->GetY();
+    destR.y = (int)position.y - Camera::Instance()->GetY();
     
     destR.w = bounds.w;
     destR.h = bounds.h;

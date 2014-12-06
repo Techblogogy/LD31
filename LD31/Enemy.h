@@ -33,7 +33,7 @@ public:
     Tile texture;
     Animation animS;
 private:
-    Vector2 vel = Vector2(-32,0);
+    Vector2 vel = Vector2(-64,0);
     bool dead = false;
     bool grounded = false;
     SDL_RendererFlip rf = SDL_FLIP_NONE;

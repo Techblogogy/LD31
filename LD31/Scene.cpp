@@ -8,12 +8,19 @@
 
 #include "Scene.h"
 
+Scene::Scene()
+{
+    tileMap = NULL;
+    menu = NULL;
+}
 Scene::Scene(std::string tMapPath)
 {
     tileMap = new TileMap(tMapPath);
     
     tileMap->LoadMap();
     tileMap->LoadResources();
+    
+    menu = NULL;
 }
 Scene::~Scene()
 {
@@ -28,7 +35,11 @@ void Scene::Add(GameObject* obj)
 
 void Scene::Update(float dt)
 {
-    tileMap->Update(dt);
+    if (menu != NULL)
+        menu->Update();
+    
+    if (tileMap != NULL)
+        tileMap->Update(dt);
     
     for (std::vector<GameObject>::size_type i=0; i<objects.size(); i++)
     {
@@ -38,7 +49,11 @@ void Scene::Update(float dt)
 
 void Scene::Render()
 {
-    tileMap->RenderStatic();
+    if (menu != NULL)
+        menu->Render();
+    
+    if (tileMap != NULL)
+        tileMap->RenderStatic();
     
     for (std::vector<GameObject>::size_type i=0; i<objects.size(); i++)
     {
@@ -55,6 +70,8 @@ void Scene::CleanUp()
     }
     objects.clear();
     
-    tileMap->CleanUp();
+    if (tileMap != NULL)
+        tileMap->CleanUp();
+    
     delete tileMap;
 }

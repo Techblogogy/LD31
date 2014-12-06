@@ -87,11 +87,18 @@ void GameManager::SetUpCamera(int w, int h)
     Camera::Instance()->SetH(h);
 }
 
+#include "Menu.h"
+
 void GameManager::SetUpScene(std::string path)
 {
     printf("Creating Scene \n");
     
-    gScene = new Scene(path);
+    //gScene = new Scene(path);
+    
+    gScene = new Scene();
+    
+    Menu* mn = new Menu();
+    gScene->menu = mn;
     
     if (gScene == NULL)
     {
@@ -108,29 +115,9 @@ void GameManager::SetUpTextureManager()
 
 /* Game Manager Logic */
 
-#include "Particle.h"
-#include "ParticleEmitter.h"
-ParticleEmitter* p;
-
 void GameManager::Tick()
 {
-    /*TextureManager::Instance()->LoadTexture("t1.png", "spSheet");
-    
-    Tile t;
-    t.id = "spSheet";
-    t.c = 0;
-    t.r = 0;
-    t.w = 16;
-    t.h = 16;
-    p = new ParticleEmitter(t, Vector2(225,215), 500, 30, -128);
-    p->setN(10);
-    p->setTime(500);
-    
-    p->setGravity(Vector2(0,2));*/
-    
-    //int x = 0;
-    
-    SDL_RenderSetScale(rend, 1.5, 1.5);
+    //SDL_RenderSetScale(rend, 1.5, 1.5);
     
     while (running)
     {
@@ -138,13 +125,7 @@ void GameManager::Tick()
         time.d = time.t - time.l;
         time.l = time.t;
         
-        //x += 1;
-        //Camera::Instance()->SetX(x);
-        
         Update();
-        
-        //p->Update(time.d);
-        
         Render();
     }
 }
@@ -164,8 +145,6 @@ void GameManager::Render()
     SDL_RenderClear(rend);
     
     gScene->Render();
-    
-    //p->Render();
     
     SDL_RenderPresent(rend);
 }

@@ -232,8 +232,6 @@ void TileMap::isEmpty(int layerId, Vector2 &p, Tile &t, Vector2 &v, float dt, bo
             p.x = (p2.x)*tilewidth - t.w;
             
             if (mapLayers[layerId][(int)(p3.y*width+p3.x)] == 5) d=true;
-            
-            printf("%d\n", mapLayers[layerId][(int)(p3.y*width+p3.x)]);
         }
     }
     else if (v.x<0)
@@ -273,9 +271,9 @@ void TileMap::isEmpty(int layerId, Vector2 &p, Tile &t, Vector2 &v, float dt, bo
 
 void TileMap::isEmptyEnemy(int layerId, Vector2 &p, Tile &t, Vector2 &v, float dt, bool &g, bool &d)
 {
-    Vector2 pp = p;
+    /*Vector2 pp = p;
     
-    pp.y += 5; //v.y;// * (dt/1000.0f);
+    //pp.y += 5; //v.y;// * (dt/1000.0f);
     
     Vector2 p1 = Vector2( (int)(pp.x)/(tilewidth), (int)(pp.y)/(tileheight) ); //Top Left
     Vector2 p2 = Vector2( (int)(pp.x-1+t.w)/(tilewidth), (int)(pp.y)/(tileheight) ); //Top Right
@@ -299,18 +297,18 @@ void TileMap::isEmptyEnemy(int layerId, Vector2 &p, Tile &t, Vector2 &v, float d
         
         printf("Bottom Collision\n");
         
-    }
+    }*/
     
-    p.x += v.x * (dt/1000.0f);
+    //p.x += v.x * (dt/1000.0f);
     
-    pp = p;
+    Vector2 pp = p;
     pp.x += v.x * (dt/1000.0f);
     
-    p1 = Vector2( (int)(pp.x)/(tilewidth), (int)(pp.y+1)/(tileheight) ); //Top Left
-    p2 = Vector2( (int)(pp.x+t.w)/(tilewidth), (int)(pp.y+1)/(tileheight) ); //Top Right
+    Vector2 p1 = Vector2( (int)(pp.x)/(tilewidth), (int)(pp.y+1)/(tileheight) ); //Top Left
+    Vector2 p2 = Vector2( (int)(pp.x+t.w)/(tilewidth), (int)(pp.y+1)/(tileheight) ); //Top Right
     
-    p3 = Vector2( (int)(pp.x)/(tilewidth), (int)(pp.y-1+t.h)/(tileheight) ); //Bottom Left
-    p4 = Vector2( (int)(pp.x+t.w)/(tilewidth), (int)(pp.y-1+t.h)/(tileheight) ); //Bottom Right
+    Vector2 p3 = Vector2( (int)(pp.x)/(tilewidth), (int)(pp.y-1+t.h)/(tileheight) ); //Bottom Left
+    Vector2 p4 = Vector2( (int)(pp.x+t.w)/(tilewidth), (int)(pp.y-1+t.h)/(tileheight) ); //Bottom Right
     
     if (v.x > 0)
     {
@@ -320,16 +318,20 @@ void TileMap::isEmptyEnemy(int layerId, Vector2 &p, Tile &t, Vector2 &v, float d
         if (mapLayers[layerId][(int)(p2.y*width+p2.x)] == 0 &&
             mapLayers[layerId][(int)(p4.y*width+p4.x)] == 0)
         {
+            printf("Right: %d\n",mapLayers[layerId][(int)((p4.y+1)*width+p4.x)]);
+            
+            if (mapLayers[layerId][(int)((p4.y+1)*width+p4.x)] == 0 ||
+                mapLayers[layerId][(int)((p4.y+1)*width+p4.x)] == 4)
+            {
+                v.x = -v.x;
+            }
+            
             p.x += v.x * (dt/1000.0f);
         }
         else
         {
             p.x = (p2.x)*tilewidth - t.w;
-            
-            if (v.x >= 0)
-                v.x = -32;
-            else
-                v.x = 32;
+            v.x = -v.x;
             
             printf("Right Collison\n");
         }
@@ -340,20 +342,26 @@ void TileMap::isEmptyEnemy(int layerId, Vector2 &p, Tile &t, Vector2 &v, float d
         if (mapLayers[layerId][(int)(p1.y*width+p1.x)] == 0 &&
             mapLayers[layerId][(int)(p3.y*width+p3.x)] == 0)
         {
+            printf("Left: %d\n",mapLayers[layerId][(int)((p3.y+1)*width+p3.x)]);
+            
+            if (mapLayers[layerId][(int)((p3.y+1)*width+p3.x)] == 0 ||
+                mapLayers[layerId][(int)((p3.y+1)*width+p3.x)] == 4)
+            {
+                v.x = -v.x;
+            }
+            
             p.x += v.x * (dt/1000.0f);
         }
         else
         {
             p.x = (p1.x)*tilewidth + tilewidth;
-            
-            if (v.x >= 0)
-                v.x = -32;
-            else
-                v.x = 32;
+            v.x = -v.x;
             
             printf("Left Collision\n");
         }
     }
+    
+    printf("\n");
 }
 
 void TileMap::Update(float dt)

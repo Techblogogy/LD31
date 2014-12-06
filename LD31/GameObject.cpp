@@ -30,7 +30,7 @@ GameObject::GameObject(std::string tId, int w, int h)
     
     animS.d = 500; //Set Animation Duration
     
-    position.x = 32*18; //18 //26
+    position.x = 32*1; //31; //18 //26
 }
 GameObject::~GameObject()
 {
