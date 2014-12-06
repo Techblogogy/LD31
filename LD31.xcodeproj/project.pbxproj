@@ -7,34 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F55FEB1A1A32D9EA0022467D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F55FEB191A32D9EA0022467D /* AppDelegate.m */; };
-		F55FEB1C1A32D9EA0022467D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F55FEB1B1A32D9EA0022467D /* main.m */; };
-		F55FEB1E1A32D9EA0022467D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F55FEB1D1A32D9EA0022467D /* Images.xcassets */; };
-		F55FEB211A32D9EA0022467D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F55FEB1F1A32D9EA0022467D /* MainMenu.xib */; };
-		F55FEB2D1A32D9EA0022467D /* LD31Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F55FEB2C1A32D9EA0022467D /* LD31Tests.m */; };
+		F55FEB1C1A32D9EA0022467D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F55FEB1B1A32D9EA0022467D /* main.cpp */; };
+		F55FEB371A32DAB30022467D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55FEB361A32DAB30022467D /* Cocoa.framework */; };
+		F55FEB391A32DAC10022467D /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55FEB381A32DAC10022467D /* CoreFoundation.framework */; };
+		F55FEB3C1A32DAD40022467D /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55FEB3A1A32DAD40022467D /* SDL2_image.framework */; };
+		F55FEB3D1A32DAD40022467D /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F55FEB3B1A32DAD40022467D /* SDL2.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		F55FEB271A32D9EA0022467D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F55FEB0B1A32D9EA0022467D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F55FEB121A32D9EA0022467D;
-			remoteInfo = LD31;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F55FEB131A32D9EA0022467D /* LD31.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LD31.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55FEB171A32D9EA0022467D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F55FEB181A32D9EA0022467D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F55FEB191A32D9EA0022467D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F55FEB1B1A32D9EA0022467D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F55FEB1D1A32D9EA0022467D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F55FEB201A32D9EA0022467D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		F55FEB261A32D9EA0022467D /* LD31Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LD31Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F55FEB2B1A32D9EA0022467D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F55FEB2C1A32D9EA0022467D /* LD31Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LD31Tests.m; sourceTree = "<group>"; };
+		F55FEB1B1A32D9EA0022467D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		F55FEB361A32DAB30022467D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		F55FEB381A32DAC10022467D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		F55FEB3A1A32DAD40022467D /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = /Library/Frameworks/SDL2_image.framework; sourceTree = "<absolute>"; };
+		F55FEB3B1A32DAD40022467D /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = /Library/Frameworks/SDL2.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,13 +29,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F55FEB231A32D9EA0022467D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				F55FEB3C1A32DAD40022467D /* SDL2_image.framework in Frameworks */,
+				F55FEB3D1A32DAD40022467D /* SDL2.framework in Frameworks */,
+				F55FEB391A32DAC10022467D /* CoreFoundation.framework in Frameworks */,
+				F55FEB371A32DAB30022467D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,8 +43,8 @@
 			isa = PBXGroup;
 			children = (
 				F55FEB151A32D9EA0022467D /* LD31 */,
-				F55FEB291A32D9EA0022467D /* LD31Tests */,
 				F55FEB141A32D9EA0022467D /* Products */,
+				F55FEB3E1A32DAE00022467D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,7 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				F55FEB131A32D9EA0022467D /* LD31.app */,
-				F55FEB261A32D9EA0022467D /* LD31Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,10 +59,7 @@
 		F55FEB151A32D9EA0022467D /* LD31 */ = {
 			isa = PBXGroup;
 			children = (
-				F55FEB181A32D9EA0022467D /* AppDelegate.h */,
-				F55FEB191A32D9EA0022467D /* AppDelegate.m */,
-				F55FEB1D1A32D9EA0022467D /* Images.xcassets */,
-				F55FEB1F1A32D9EA0022467D /* MainMenu.xib */,
+				F55FEB1B1A32D9EA0022467D /* main.cpp */,
 				F55FEB161A32D9EA0022467D /* Supporting Files */,
 			);
 			path = LD31;
@@ -89,26 +69,19 @@
 			isa = PBXGroup;
 			children = (
 				F55FEB171A32D9EA0022467D /* Info.plist */,
-				F55FEB1B1A32D9EA0022467D /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F55FEB291A32D9EA0022467D /* LD31Tests */ = {
+		F55FEB3E1A32DAE00022467D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F55FEB2C1A32D9EA0022467D /* LD31Tests.m */,
-				F55FEB2A1A32D9EA0022467D /* Supporting Files */,
+				F55FEB3A1A32DAD40022467D /* SDL2_image.framework */,
+				F55FEB3B1A32DAD40022467D /* SDL2.framework */,
+				F55FEB381A32DAC10022467D /* CoreFoundation.framework */,
+				F55FEB361A32DAB30022467D /* Cocoa.framework */,
 			);
-			path = LD31Tests;
-			sourceTree = "<group>";
-		};
-		F55FEB2A1A32D9EA0022467D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				F55FEB2B1A32D9EA0022467D /* Info.plist */,
-			);
-			name = "Supporting Files";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,24 +104,6 @@
 			productReference = F55FEB131A32D9EA0022467D /* LD31.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F55FEB251A32D9EA0022467D /* LD31Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F55FEB331A32D9EA0022467D /* Build configuration list for PBXNativeTarget "LD31Tests" */;
-			buildPhases = (
-				F55FEB221A32D9EA0022467D /* Sources */,
-				F55FEB231A32D9EA0022467D /* Frameworks */,
-				F55FEB241A32D9EA0022467D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F55FEB281A32D9EA0022467D /* PBXTargetDependency */,
-			);
-			name = LD31Tests;
-			productName = LD31Tests;
-			productReference = F55FEB261A32D9EA0022467D /* LD31Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -160,10 +115,6 @@
 				TargetAttributes = {
 					F55FEB121A32D9EA0022467D = {
 						CreatedOnToolsVersion = 6.1;
-					};
-					F55FEB251A32D9EA0022467D = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = F55FEB121A32D9EA0022467D;
 					};
 				};
 			};
@@ -181,22 +132,12 @@
 			projectRoot = "";
 			targets = (
 				F55FEB121A32D9EA0022467D /* LD31 */,
-				F55FEB251A32D9EA0022467D /* LD31Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F55FEB111A32D9EA0022467D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F55FEB1E1A32D9EA0022467D /* Images.xcassets in Resources */,
-				F55FEB211A32D9EA0022467D /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F55FEB241A32D9EA0022467D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -210,39 +151,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F55FEB1C1A32D9EA0022467D /* main.m in Sources */,
-				F55FEB1A1A32D9EA0022467D /* AppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F55FEB221A32D9EA0022467D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F55FEB2D1A32D9EA0022467D /* LD31Tests.m in Sources */,
+				F55FEB1C1A32D9EA0022467D /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F55FEB281A32D9EA0022467D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F55FEB121A32D9EA0022467D /* LD31 */;
-			targetProxy = F55FEB271A32D9EA0022467D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		F55FEB1F1A32D9EA0022467D /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F55FEB201A32D9EA0022467D /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F55FEB2E1A32D9EA0022467D /* Debug */ = {
@@ -326,6 +239,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = LD31/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -337,45 +254,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = LD31/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		F55FEB341A32D9EA0022467D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = LD31Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LD31.app/Contents/MacOS/LD31";
-			};
-			name = Debug;
-		};
-		F55FEB351A32D9EA0022467D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = LD31Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LD31.app/Contents/MacOS/LD31";
 			};
 			name = Release;
 		};
@@ -396,14 +281,6 @@
 			buildConfigurations = (
 				F55FEB311A32D9EA0022467D /* Debug */,
 				F55FEB321A32D9EA0022467D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		F55FEB331A32D9EA0022467D /* Build configuration list for PBXNativeTarget "LD31Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F55FEB341A32D9EA0022467D /* Debug */,
-				F55FEB351A32D9EA0022467D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
