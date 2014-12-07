@@ -11,6 +11,8 @@
 
 #include <vector>
 
+#include <SDL2_mixer/SDL_mixer.h>
+
 #include "Menu.h"
 #include "GameObject.h"
 #include "TileMap.h"
@@ -27,10 +29,10 @@ public:
     
     void Add(GameObject* obj); //Add Object to scene
     
-    void Render(); //Render All Objects to scenes
-    void Update(float dt); //Update All Objects on scene
+    virtual void Render(); //Render All Objects to scenes
+    virtual void Update(float dt); //Update All Objects on scene
     
-    void CleanUp();
+    virtual void CleanUp();
     
     std::vector<GameObject*> objects; //Scene Objects
 };

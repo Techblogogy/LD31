@@ -13,6 +13,9 @@
 TileMap::TileMap(std::string tP)
 {
     tiledPath = tP;
+    
+    hurtFx = Mix_LoadWAV("Hit_Hurt14.wav");
+    coreFx = Mix_LoadWAV("Pickup_Coin13.wav");
 }
 
 TileMap::~TileMap()
@@ -183,7 +186,26 @@ void TileMap::isEmpty(int layerId, Vector2 &p, Tile &t, Vector2 &v, float dt, bo
             g = true;
             p.y = (p3.y)*tileheight - t.h;
             
-            if (mapLayers[layerId][(int)(p3.y*width+p3.x)] == 4) d=true;
+            if (mapLayers[layerId][(int)(p3.y*width+p3.x)] == 4)
+            {
+                Mix_PlayChannel(-1, hurtFx, 0);
+                d=true;
+            }
+            
+            if (mapLayers[layerId][(int)(p3.y*width+p3.x)] == 5) //End Level
+            {
+                Mix_PlayChannel(-1, coreFx, 0);
+                
+                SDL_RenderSetScale(GameManager::Instance()->rend, 1, 1);
+                
+                Camera::Instance()->SetX(0);
+                Camera::Instance()->SetY(0);
+                
+                GameManager::Instance()->mn->finnishLast();
+                GameManager::Instance()->gScene = GameManager::Instance()->menuScene;
+                
+                printf("Ending\n");
+            }
         }
     }
     else
@@ -231,7 +253,10 @@ void TileMap::isEmpty(int layerId, Vector2 &p, Tile &t, Vector2 &v, float dt, bo
         {
             p.x = (p2.x)*tilewidth - t.w;
             
-            if (mapLayers[layerId][(int)(p3.y*width+p3.x)] == 5) d=true;
+            if (mapLayers[layerId][(int)(p3.y*width+p3.x)] == 5)
+            {
+                d=true;
+            }
         }
     }
     else if (v.x<0)
@@ -257,6 +282,7 @@ void TileMap::isEmpty(int layerId, Vector2 &p, Tile &t, Vector2 &v, float dt, bo
                (int)(p.y+t.h) < (int)(enemies[i]->position.y) ||
                (int)(enemies[i]->position.y+enemies[i]->texture.h) < (int)(p.y) ) )
         {
+            Mix_PlayChannel(-1, hurtFx, 0);
             d=true;
         }
     }
@@ -271,36 +297,6 @@ void TileMap::isEmpty(int layerId, Vector2 &p, Tile &t, Vector2 &v, float dt, bo
 
 void TileMap::isEmptyEnemy(int layerId, Vector2 &p, Tile &t, Vector2 &v, float dt, bool &g, bool &d)
 {
-    /*Vector2 pp = p;
-    
-    //pp.y += 5; //v.y;// * (dt/1000.0f);
-    
-    Vector2 p1 = Vector2( (int)(pp.x)/(tilewidth), (int)(pp.y)/(tileheight) ); //Top Left
-    Vector2 p2 = Vector2( (int)(pp.x-1+t.w)/(tilewidth), (int)(pp.y)/(tileheight) ); //Top Right
-    
-    Vector2 p3 = Vector2( (int)(pp.x)/(tilewidth), (int)(pp.y+t.h)/(tileheight) ); //Bottom Left
-    Vector2 p4 = Vector2( (int)(pp.x-1+t.w)/(tilewidth), (int)(pp.y+t.h)/(tileheight) ); //Bottom Right
-    
-    //Bottom Collision
-    if (mapLayers[layerId][(int)(p3.y*width+p3.x)] == 0 ||
-        mapLayers[layerId][(int)(p4.y*width+p4.x)] == 0 ||
-        
-        mapLayers[layerId][(int)(p3.y*width+p3.x)] == 4 ||
-        mapLayers[layerId][(int)(p4.y*width+p4.x)] == 4)
-    {
-        //v.x = -v.x;
-        
-        if (v.x >= 0)
-            v.x = -32;
-        else
-            v.x = 32;
-        
-        printf("Bottom Collision\n");
-        
-    }*/
-    
-    //p.x += v.x * (dt/1000.0f);
-    
     Vector2 pp = p;
     pp.x += v.x * (dt/1000.0f);
     
@@ -312,14 +308,10 @@ void TileMap::isEmptyEnemy(int layerId, Vector2 &p, Tile &t, Vector2 &v, float d
     
     if (v.x > 0)
     {
-        //if (pp.x > width*tilewidth) pp.x = width-t.w;
-        
         //Right Collision
         if (mapLayers[layerId][(int)(p2.y*width+p2.x)] == 0 &&
             mapLayers[layerId][(int)(p4.y*width+p4.x)] == 0)
         {
-            printf("Right: %d\n",mapLayers[layerId][(int)((p4.y+1)*width+p4.x)]);
-            
             if (mapLayers[layerId][(int)((p4.y+1)*width+p4.x)] == 0 ||
                 mapLayers[layerId][(int)((p4.y+1)*width+p4.x)] == 4)
             {
@@ -332,8 +324,6 @@ void TileMap::isEmptyEnemy(int layerId, Vector2 &p, Tile &t, Vector2 &v, float d
         {
             p.x = (p2.x)*tilewidth - t.w;
             v.x = -v.x;
-            
-            printf("Right Collison\n");
         }
     }
     else if (v.x<0)
@@ -342,8 +332,6 @@ void TileMap::isEmptyEnemy(int layerId, Vector2 &p, Tile &t, Vector2 &v, float d
         if (mapLayers[layerId][(int)(p1.y*width+p1.x)] == 0 &&
             mapLayers[layerId][(int)(p3.y*width+p3.x)] == 0)
         {
-            printf("Left: %d\n",mapLayers[layerId][(int)((p3.y+1)*width+p3.x)]);
-            
             if (mapLayers[layerId][(int)((p3.y+1)*width+p3.x)] == 0 ||
                 mapLayers[layerId][(int)((p3.y+1)*width+p3.x)] == 4)
             {
@@ -356,12 +344,8 @@ void TileMap::isEmptyEnemy(int layerId, Vector2 &p, Tile &t, Vector2 &v, float d
         {
             p.x = (p1.x)*tilewidth + tilewidth;
             v.x = -v.x;
-            
-            printf("Left Collision\n");
         }
     }
-    
-    printf("\n");
 }
 
 void TileMap::Update(float dt)

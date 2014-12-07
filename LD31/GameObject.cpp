@@ -31,6 +31,8 @@ GameObject::GameObject(std::string tId, int w, int h)
     animS.d = 500; //Set Animation Duration
     
     position.x = 32*1; //31; //18 //26
+    
+    jumpFx = Mix_LoadWAV("Jump24.wav");
 }
 GameObject::~GameObject()
 {
@@ -83,6 +85,8 @@ void GameObject::Update(float dt)
         
         if (EventHandler::Instance()->isKeyDown(SDL_SCANCODE_SPACE) && grounded)
         {
+            Mix_PlayChannel(-1, jumpFx, 0);
+            
             vel.y = -4;
         }
         

@@ -9,6 +9,8 @@
 #ifndef __GameEngine__GameObject__
 #define __GameEngine__GameObject__
 
+#include <SDL2_mixer/SDL_mixer.h>
+
 #include <string> //Inlcude STD String
 #include <math.h>
 
@@ -32,6 +34,9 @@ public:
 private:
     Tile texture;
     Animation animS;
+    
+    Mix_Chunk* jumpFx;
+    Mix_Chunk* hurtFx;
 };
 
 #endif /* defined(__GameEngine__GameObject__) */

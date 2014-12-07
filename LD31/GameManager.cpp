@@ -28,6 +28,7 @@ GameManager::GameManager()
 void GameManager::Init(std::string wName, int w, int h, std::string path)
 {
     SDL_Init(SDL_INIT_EVERYTHING);
+    Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
     
     CreateWindow(wName, w, h);
     CreateRenderer();
@@ -93,12 +94,15 @@ void GameManager::SetUpScene(std::string path)
 {
     printf("Creating Scene \n");
     
-    //gScene = new Scene(path);
+    //gScene = new Scene();
     
-    gScene = new Scene();
+    //gScene = new Scene3d(m);
     
-    Menu* mn = new Menu();
-    gScene->menu = mn;
+    menuScene = new Scene();
+    mn = new Menu();
+    menuScene->menu = mn;
+    
+    gScene = menuScene;
     
     if (gScene == NULL)
     {

@@ -10,12 +10,14 @@
 #define __GameEngine__GameManager__
 
 #include <SDL2/SDL.h> //Main SDL Header
+#include <SDL2_mixer/SDL_mixer.h>
 #include <stdio.h> //STD IO Library
 
 #include "TextureManager.h" //Game Texture Manager
 #include "EventHandler.h" //Game Event Manager
 #include "Camera.h" //Game Camera
 #include "Scene.h" //Game Scene
+#include "Scene3d.h" //Game 3D Scene
 #include "TileMap.h" //Game Tile Map
 
 #define FPS_MS 16
@@ -35,7 +37,10 @@ public:
     SDL_Window* window; //SDL Game Window
     SDL_Renderer* rend; //SDL Game Renderer
     
-    Scene* gScene; //Main Game Scene
+    Scene* gScene = NULL; //Main Game Scene
+    
+    Scene* menuScene;
+    Menu* mn;
     
     Time time;
     

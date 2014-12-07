@@ -12,6 +12,7 @@
 #include <CoreFoundation/CFBundle.h>
 
 #include <SDL2/SDL.h>
+#include <SDL2_mixer/SDL_mixer.h>
 
 #include <string>
 #include <fstream>
@@ -60,6 +61,9 @@ private:
     
     int width; //TileMap width in tiles
     int height; //TileMap height in tiles
+    
+    Mix_Chunk* hurtFx;
+    Mix_Chunk* coreFx;
 };
 
 #endif /* defined(__GameEngine__TileMap__) */
